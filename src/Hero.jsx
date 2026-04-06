@@ -1,28 +1,56 @@
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+
 const Hero = () => {
   return (
     <section style={styles.hero}>
       <div style={styles.container}>
-        <h1 style={styles.name}>Praveen G R</h1>
+        
+        <div style={styles.left}>
+          
+          <p style={styles.available}>Available for hire</p>
 
-        <h2 style={styles.role}>Full Stack Developer</h2>
+          <h1 style={styles.title}>
+            Hello, I'm <br />
+            <span style={styles.name}>Praveen G R</span>
+          </h1>
 
-        <p style={styles.bio}>
-          I build scalable web applications using React, Node.js and MongoDB.
-          Passionate about solving real world problems.
-        </p>
+          <p style={styles.role}>
+            I'm a <span style={styles.highlight}>Full-Stack Developer</span>
+          </p>
 
-        <div style={styles.buttons}>
-          <a href="#contact" style={styles.primaryBtn}>
-            Contact Me
-          </a>
+          <div style={styles.skills}>
+            <span style={styles.skill}>React</span>
+            <span style={styles.skill}>Node.js</span>
+            <span style={styles.skill}>MongoDB</span>
+            <span style={styles.skill}>AI</span>
+            <span style={styles.skill}>DSA</span>
+          </div>
 
-          <a
-            href="#"
-            style={styles.secondaryBtn}
-          >
-            Resume
-          </a>
+          <p style={styles.desc}>
+            Developing intelligent solutions and building scalable applications.
+          </p>
+
+          <div style={styles.buttons}>
+            <button style={styles.primary}>Get In Touch</button>
+            <button style={styles.secondary}>Download Resume</button>
+          </div>
+
+          <div style={styles.social}>
+            <FaGithub />
+            <FaLinkedin />
+            <FaInstagram />
+          </div>
+
         </div>
+
+        <div style={styles.right}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="profile"
+            style={styles.image}
+          />
+        </div>
+
       </div>
     </section>
   );
@@ -30,51 +58,91 @@ const Hero = () => {
 
 const styles = {
   hero: {
-    minHeight: "80vh",
+    minHeight: "90vh",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center",
-    background: "linear-gradient(135deg,#1e3a8a,#2563eb)",
-    color: "white"
+    background: "#f8fafc"
   },
   container: {
-    textAlign: "center",
-    maxWidth: "700px",
-    padding: "20px"
+    maxWidth: "1200px",
+    margin: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: "50px",
+    padding: "40px"
+  },
+  left: {
+    flex: 1
+  },
+  right: {
+    flex: 1,
+    textAlign: "center"
+  },
+  available: {
+    color: "#8b5cf6",
+    fontWeight: "500"
+  },
+  title: {
+    fontSize: "48px",
+    margin: "10px 0"
   },
   name: {
-    fontSize: "48px",
-    marginBottom: "10px"
+    color: "#8b5cf6"
   },
   role: {
-    fontSize: "24px",
     marginBottom: "15px",
-    color: "#c7d2fe"
+    color: "#555"
   },
-  bio: {
-    fontSize: "18px",
-    marginBottom: "25px",
-    lineHeight: "1.6"
+  highlight: {
+    color: "#8b5cf6",
+    fontWeight: "600"
+  },
+  skills: {
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "10px",
+    marginBottom: "15px"
+  },
+  skill: {
+    background: "#e0e7ff",
+    padding: "6px 12px",
+    borderRadius: "20px",
+    fontSize: "14px"
+  },
+  desc: {
+    marginBottom: "20px",
+    color: "#555"
   },
   buttons: {
     display: "flex",
-    justifyContent: "center",
-    gap: "15px"
+    gap: "15px",
+    marginBottom: "20px"
   },
-  primaryBtn: {
-    padding: "12px 24px",
-    background: "white",
-    color: "#1e3a8a",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: "500"
-  },
-  secondaryBtn: {
-    padding: "12px 24px",
-    border: "2px solid white",
+  primary: {
+    background: "#8b5cf6",
     color: "white",
+    border: "none",
+    padding: "12px 20px",
     borderRadius: "8px",
-    textDecoration: "none"
+    cursor: "pointer"
+  },
+  secondary: {
+    border: "1px solid #8b5cf6",
+    padding: "12px 20px",
+    borderRadius: "8px",
+    background: "white",
+    cursor: "pointer"
+  },
+  social: {
+    display: "flex",
+    gap: "20px",
+    fontSize: "20px"
+  },
+  image: {
+    width: "350px",
+    borderRadius: "50%",
+    boxShadow: "0 10px 40px rgba(0,0,0,0.1)"
   }
 };
 
