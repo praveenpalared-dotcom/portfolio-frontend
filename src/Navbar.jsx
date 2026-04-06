@@ -1,49 +1,65 @@
 const Navbar = () => {
   return (
-    <nav style={styles.nav}>
-      <div style={styles.logo}>PG</div>
+    <header style={styles.header}>
+      <div style={styles.container}>
+        
+        <div style={styles.logo}>
+          PG
+        </div>
 
-      <ul style={styles.menu}>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+        <nav style={styles.nav}>
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-      <button style={styles.button}>Resume</button>
-    </nav>
+        <button style={styles.button}>
+          Resume
+        </button>
+
+      </div>
+    </header>
   );
 };
 
 const styles = {
-  nav: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "20px 40px",
+  header: {
     position: "sticky",
     top: 0,
     background: "white",
-    zIndex: 1000,
-    boxShadow: "0 2px 10px rgba(0,0,0,0.05)"
+    boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+    zIndex: 1000
   },
+
+  container: {
+    maxWidth: "1200px",
+    margin: "0 auto",
+    padding: "18px 20px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+
   logo: {
     fontSize: "22px",
-    fontWeight: "bold",
-    color: "#8b5cf6"
+    fontWeight: "600",
+    color: "#7c3aed"
   },
-  menu: {
+
+  nav: {
     display: "flex",
     gap: "30px",
-    listStyle: "none"
+    fontWeight: "500"
   },
+
   button: {
-    background: "#8b5cf6",
+    background: "#7c3aed",
     color: "white",
-    border: "none",
     padding: "8px 18px",
     borderRadius: "6px",
+    border: "none",
     cursor: "pointer"
   }
 };
