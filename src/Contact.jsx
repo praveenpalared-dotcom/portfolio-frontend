@@ -52,62 +52,69 @@ const Contact = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <h2 style={styles.title}>Contact Me</h2>
+    <div style={styles.page}>
+      <div style={styles.container}>
+        <h2 style={styles.title}>Contact Me</h2>
 
-      <form onSubmit={handleSubmit} style={styles.form}>
-        <input
-          style={styles.input}
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
+        <form onSubmit={handleSubmit} style={styles.form}>
+          <input
+            style={styles.input}
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
 
-        <input
-          style={styles.input}
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
+          <input
+            style={styles.input}
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
 
-        <textarea
-          style={styles.textarea}
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-        />
+          <textarea
+            style={styles.textarea}
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
 
-        <button style={styles.button} type="submit">
-          {loading ? "Sending..." : "Send Message"}
-        </button>
+          <button style={styles.button} type="submit">
+            {loading ? "Sending..." : "Send Message"}
+          </button>
 
-        {success && <p style={styles.success}>{success}</p>}
-      </form>
+          {success && <p style={styles.success}>{success}</p>}
+        </form>
+      </div>
     </div>
   );
 };
 
 const styles = {
+  page: {
+    minHeight: "100vh",
+    background: "linear-gradient(135deg,#667eea,#764ba2)",
+    padding: "40px"
+  },
   container: {
     maxWidth: "600px",
-    margin: "80px auto",
+    margin: "auto",
     padding: "40px",
     borderRadius: "16px",
     background: "#ffffff",
-    boxShadow: "0 15px 40px rgba(0,0,0,0.08)"
+    boxShadow: "0 20px 50px rgba(0,0,0,0.15)"
   },
   title: {
     textAlign: "center",
     marginBottom: "25px",
-    fontSize: "28px",
+    fontSize: "30px",
     fontWeight: "600",
     color: "#111827"
   },
@@ -139,8 +146,7 @@ const styles = {
     borderRadius: "8px",
     cursor: "pointer",
     fontSize: "16px",
-    fontWeight: "500",
-    transition: "0.3s"
+    fontWeight: "500"
   },
   success: {
     color: "green",
