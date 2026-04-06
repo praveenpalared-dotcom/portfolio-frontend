@@ -15,7 +15,7 @@ const Hero = () => {
           </h1>
 
           <p style={styles.role}>
-            I'm a <span style={styles.highlight}>Full-Stack Developer</span>
+            Full Stack Developer
           </p>
 
           <div style={styles.skills}>
@@ -63,86 +63,108 @@ const styles = {
     alignItems: "center",
     background: "#f8fafc"
   },
+
   container: {
     maxWidth: "1200px",
-    margin: "auto",
+    margin: "0 auto",
+    padding: "40px",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: "50px",
-    padding: "40px"
+    gap: "60px"
   },
+
   left: {
     flex: 1
   },
+
   right: {
     flex: 1,
     textAlign: "center"
   },
+
   available: {
     color: "#8b5cf6",
-    fontWeight: "500"
+    fontWeight: "500",
+    marginBottom: "10px"
   },
+
   title: {
-    fontSize: "48px",
-    margin: "10px 0"
+    fontSize: "52px",
+    lineHeight: "1.2",
+    marginBottom: "10px"
   },
+
   name: {
-    color: "#8b5cf6"
-  },
-  role: {
-    marginBottom: "15px",
-    color: "#555"
-  },
-  highlight: {
     color: "#8b5cf6",
-    fontWeight: "600"
+    fontWeight: "700"
   },
+
+  role: {
+    fontSize: "18px",
+    color: "#64748b",
+    marginBottom: "20px"
+  },
+
   skills: {
     display: "flex",
     flexWrap: "wrap",
     gap: "10px",
-    marginBottom: "15px"
+    marginBottom: "20px"
   },
+
   skill: {
-    background: "#e0e7ff",
-    padding: "6px 12px",
+    background: "#ede9fe",
+    padding: "8px 14px",
     borderRadius: "20px",
-    fontSize: "14px"
+    fontSize: "14px",
+    color: "#6d28d9",
+    fontWeight: "500"
   },
+
   desc: {
-    marginBottom: "20px",
-    color: "#555"
+    color: "#475569",
+    marginBottom: "25px",
+    lineHeight: "1.6"
   },
+
   buttons: {
     display: "flex",
     gap: "15px",
-    marginBottom: "20px"
+    marginBottom: "25px"
   },
+
   primary: {
     background: "#8b5cf6",
     color: "white",
     border: "none",
-    padding: "12px 20px",
+    padding: "12px 24px",
     borderRadius: "8px",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontWeight: "500"
   },
+
   secondary: {
-    border: "1px solid #8b5cf6",
-    padding: "12px 20px",
+    border: "2px solid #8b5cf6",
+    padding: "12px 24px",
     borderRadius: "8px",
     background: "white",
-    cursor: "pointer"
+    cursor: "pointer",
+    color: "#8b5cf6",
+    fontWeight: "500"
   },
+
   social: {
     display: "flex",
-    gap: "20px",
-    fontSize: "20px"
+    gap: "18px",
+    fontSize: "20px",
+    color: "#475569"
   },
+
   image: {
-    width: "350px",
+    width: "360px",
     borderRadius: "50%",
-    boxShadow: "0 10px 40px rgba(0,0,0,0.1)"
+    boxShadow: "0 15px 40px rgba(0,0,0,0.1)"
   }
 };
 
