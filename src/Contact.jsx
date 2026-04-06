@@ -20,25 +20,35 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setSuccess("");
 
-    const response = await fetch("https://portfolio-backend-44a9.onrender.com/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(formData)
-    });
+    try {
+      const response = await fetch(
+        "https://portfolio-backend-44a9.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(formData)
+        }
+      );
 
-    const data = await response.json();
+      await response.json();
+
+      setSuccess("Message sent successfully ✅");
+
+      setFormData({
+        name: "",
+        email: "",
+        message: ""
+      });
+
+    } catch (error) {
+      setSuccess("Something went wrong ❌");
+    }
 
     setLoading(false);
-    setSuccess("Message sent successfully ✅");
-
-    setFormData({
-      name: "",
-      email: "",
-      message: ""
-    });
   };
 
   return (
@@ -87,42 +97,56 @@ const Contact = () => {
 
 const styles = {
   container: {
-    maxWidth: "500px",
-    margin: "60px auto",
-    padding: "30px",
-    borderRadius: "10px",
-    boxShadow: "0 0 20px rgba(0,0,0,0.1)"
+    maxWidth: "600px",
+    margin: "80px auto",
+    padding: "40px",
+    borderRadius: "16px",
+    background: "#ffffff",
+    boxShadow: "0 15px 40px rgba(0,0,0,0.08)"
   },
   title: {
-    textAlign: "center"
+    textAlign: "center",
+    marginBottom: "25px",
+    fontSize: "28px",
+    fontWeight: "600",
+    color: "#111827"
   },
   form: {
     display: "flex",
     flexDirection: "column",
-    gap: "15px"
+    gap: "18px"
   },
   input: {
-    padding: "12px",
-    borderRadius: "6px",
-    border: "1px solid #ccc"
+    padding: "14px",
+    borderRadius: "8px",
+    border: "1px solid #ddd",
+    fontSize: "15px",
+    outline: "none"
   },
   textarea: {
-    padding: "12px",
-    borderRadius: "6px",
-    border: "1px solid #ccc",
-    minHeight: "120px"
+    padding: "14px",
+    borderRadius: "8px",
+    border: "1px solid #ddd",
+    minHeight: "140px",
+    fontSize: "15px",
+    outline: "none"
   },
   button: {
-    padding: "12px",
-    background: "#2563eb",
+    padding: "14px",
+    background: "linear-gradient(135deg,#2563eb,#1d4ed8)",
     color: "white",
     border: "none",
-    borderRadius: "6px",
-    cursor: "pointer"
+    borderRadius: "8px",
+    cursor: "pointer",
+    fontSize: "16px",
+    fontWeight: "500",
+    transition: "0.3s"
   },
   success: {
     color: "green",
-    textAlign: "center"
+    textAlign: "center",
+    fontWeight: "500",
+    marginTop: "10px"
   }
 };
 
