@@ -1,12 +1,12 @@
+import Hero from "./Hero";
 import Contact from "./Contact";
-import Admin from "./Admin";
 
 function App() {
   return (
-    <div>
+    <>
+      <Hero />
       <Contact />
-      <Admin />
-    </div>
+    </>
   );
 }
 
