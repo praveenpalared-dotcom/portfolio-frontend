@@ -103,6 +103,11 @@ const styles = {
     background: "linear-gradient(135deg,#667eea,#764ba2)",
     padding: "40px"
   },
+  heading:{
+fontSize:"36px",
+marginBottom:"40px",
+textAlign:"center"
+},
   container: {
     maxWidth: "600px",
     margin: "auto",
